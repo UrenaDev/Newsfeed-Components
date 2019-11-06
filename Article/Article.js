@@ -114,7 +114,7 @@ const data = [
 */
 
 
-const summonArticle = (title, date, p1, p2, p3) => {
+const createArticle = (title, date, p1, p2, p3) => {
   //creating elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -127,6 +127,11 @@ const summonArticle = (title, date, p1, p2, p3) => {
 
   //creating children
 
-  
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(button);
 
 }
