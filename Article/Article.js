@@ -85,7 +85,7 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
 
   // New Articles
 
@@ -163,8 +163,21 @@ const createArticle = (title, date, p1, p2, p3) => {
 
   articleTitle.textContent = title;
   articleDate.textContent = date;
-  par1.textContent = firstParagraph;
-  par2.textContent = secondParagraph;
-  par3.textContent = thirdParagraph;
+  par1.textContent = p1;
+  par2.textContent = p2;
+  par3.textContent = p3;
   button.textContent = 'Expand';
+
+  //event listener
+
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
 }
+
+const articles = document.querySelector('.articles');
+data.forEach(article => {
+  articles.appendChild(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph));
+});
